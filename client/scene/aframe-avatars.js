@@ -147,7 +147,7 @@ export function markup(
       id: 'player',
       movementControls: 'constrainToNavMesh: true; speed:0.2;',
       kinematicBody: 'enableJumps: true',
-      jumpAbility: 'maxJumps: 2; distance: 3;',
+      jumpAbility: 'maxJumps: 1; distance: 0.2; mass: 20;',
       navigator: 'cameraRig: #player; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable',
       networked: `template: #${pTemplate}; attachTemplateToLocal:false;`,
       position: '0 0 0',

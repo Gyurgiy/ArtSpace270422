@@ -20,7 +20,7 @@ app.ready(async () => {
     const { port } = app.env
 
     // Старт сервиса на указанном порту
-    await app.listen(port)
+    await app.listen(port, '0.0.0.0')
     console.log('listening on http://localhost:' + port)
   } catch (err) {
     app.log.error(err)

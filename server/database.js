@@ -93,8 +93,20 @@ async function initialData(app) {
 
 export default fastifyPlugin(async function routes(/** @type {any} */ app) {
   const db = new sequelize.Sequelize(app.env.connectionString, {
+    dialectOptions: {
+      ssl: {
+        rejectUnauthorized: false
+      }
+    },
     logging: app.env.debugMode ? console.log : false
   })
+
+  try {
+    await db.authenticate()
+    console.log('Connection has been established successfully.')
+  } catch (error) {
+    console.error('Unable to connect to the database:', error)
+  }
 
   app.decorate('db', {
     User: User.init(db)

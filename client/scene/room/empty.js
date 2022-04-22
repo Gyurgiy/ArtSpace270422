@@ -6,10 +6,18 @@ export function markup(
   scene(oom
     .aBox({
       staticBody: true,
-      position: '0 0 0',
-      width: '100',
+      position: '10 0.5 0',
+      width: '10',
       height: '1',
-      depth: '100'
+      depth: '10'
     })
-    .aEntity({ navMesh: true, gltfModel: '/scene/test-navmesh.gltf' }))
+    .aBox({
+      staticBody: true,
+      position: '20 2 0',
+      width: '10',
+      height: '1',
+      depth: '10'
+    })
+    // .aEntity({ navMesh: true, gltfModel: '/scene/test-navmesh.gltf' })
+  )
 }
