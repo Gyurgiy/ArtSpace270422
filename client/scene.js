@@ -53,7 +53,7 @@ export async function markup(/** @type {import("@notml/core").oom} */ oom) {
   const assets = oom.aAssets({ id: 'main-assets' })
   const scene = oom.aScene({
     id: 'main-scene',
-    physics: 'gravity: -1; friction: 0; restitution: 0',
+    physics: 'gravity: -0.5;',
     networkedScene: `room: ${room}; debug: false; adapter: easyrtc; audio: ${hasMic};`
   }, assets)
 
