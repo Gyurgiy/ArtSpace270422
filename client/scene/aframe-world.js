@@ -18,6 +18,7 @@ export async function markup(
     }))
   scene(oom
     .aEntity({
+      staticBody: true,
       position: '0 0 0',
       geometry: 'primitive: plane; width: 10000; height: 10000;',
       rotation: '-90 0 0',
