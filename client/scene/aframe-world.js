@@ -8,24 +8,23 @@ export async function markup(
   assets(oom
     .img({
       id: 'grid',
-      src: 'https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png',
+      src: '/scene/img/grid.png',
       crossorigin: 'anonymous'
     })
     .img({
       id: 'sky',
-      src: 'https://img.gs/bbdkhfbzkk/2048x2048,stretch/https://i.imgur.com/WqlqEkq.jpg',
+      src: '/scene/img/sky.png',
       crossorigin: 'anonymous'
     }))
   scene(oom
     .aEntity({
       staticBody: true,
       position: '0 0 0',
-      geometry: 'primitive: plane; width: 10000; height: 10000;',
+      geometry: 'primitive: plane; width: 300; height: 300;',
       rotation: '-90 0 0',
-      material: 'src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;'
+      material: 'src: #grid; repeat: 100 100; transparent: true; metalness:0; roughness: 10; sphericalEnvMap: #sky;'
     })
-    .aEntity({ light: 'color: #ccccff; intensity: 1; type: ambient;', visible: '' })
-    .aEntity({ light: 'color: #ffaaff; intensity: 1.5', position: '5 5 5' })
+    .aEntity({ light: 'color: #silver; intensity: 1; type: ambient;', visible: '' })
     .aSky({ src: '#sky', rotation: '0 -90 0' }))
 
   await import(`./room/${room}.js`).then(({ markup }) => markup(oom, assets, scene))
